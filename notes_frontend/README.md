@@ -1,82 +1,44 @@
-# Lightweight React Template for KAVIA
+# Ocean Notes - Personal Notes Organizer (React + Supabase)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern, minimalist notes application with an Ocean Professional theme.
 
-## Features
+## Requirements
+- Node.js 16+
+- Supabase project credentials
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+## Setup
+1. Copy `.env.example` to `.env` and set:
+   - REACT_APP_SUPABASE_URL
+   - REACT_APP_SUPABASE_KEY
 
-## Getting Started
+2. Ensure Supabase has a `notes` table (see `OCEAN_THEME_README.md` for SQL).
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-### `npm test`
-
-Launches the test runner in interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
+3. Install dependencies and run:
+```bash
+npm install
+npm start
 ```
 
-### Components
+## Features
+- Add, edit, delete, and view notes
+- Ocean Professional theme (blue & amber accents)
+- Smooth transitions, subtle gradients, rounded corners
+- Supabase integration via env vars
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## Public Interfaces
+- src/lib/supabaseClient.js
+  - fetchNotes()
+  - createNote(note)
+  - updateNote(id, updates)
+  - deleteNote(id)
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+## Environment Variables
+- REACT_APP_SUPABASE_URL
+- REACT_APP_SUPABASE_KEY
 
-## Learn More
+Note: Do not hardcode credentials. Use .env per environment.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Scripts
+- npm start
+- npm build
+- npm test
